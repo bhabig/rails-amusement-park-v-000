@@ -50,9 +50,12 @@ group :test, :development do
 end
 
 group :production do
-  gem "pg"
   gem "google-analytics-rails"
   gem "rails_12factor"
 end
 
+gem 'devise'
+gem 'pundit'
+gem 'omniauth'
+gem 'omniauth-facebook'
 gem "bootstrap-sass", "~> 3.1.1"
