@@ -5,13 +5,9 @@ class UsersController < ApplicationController
   end
 
   def create
-    if password?
       @user = User.create(user_params)
       session[:user_id] = @user.id
       redirect_to user_path(@user)
-    else
-      redirect_to new_user_path
-    end
   end
 
   def show

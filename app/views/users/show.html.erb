@@ -1,5 +1,5 @@
-<h1><%= @user.name %>'s Credentials:</h1></br>
-<h3>Height: <%= @user.height %></h3></br>
-<h3>Mood: <%= @user.mood %></h3></br>
-<h3><%= @user.nausea %></h3></br>
-<h3><%= @user.tickets %></h3></br>
+<h1><%= @user.name if @user %>'s Credentials:</h1></br>
+<h3>Height: <%= @user.height if !@user.height.nil? %></h3></br>
+<h3>Mood: <%= @user.mood if !@user.nausea.nil? && !@user.happiness.nil? %></h3></br>
+<h3><%= @user.nausea if !@user.nausea.nil? %></h3></br>
+<h3><%= @user.tickets if !@user.tickets.nil? %></h3></br>
