@@ -1,9 +1,9 @@
-<%= form_tag('/signin', method: :put) do %>
-  <%= label_tag "Name" %>
-  <%= text_field_tag :name %>
+<%= form_for @user, url: {controller: "sessions", action: "create"} do |f| %>
+  <%= f.label "Name" %>
+  <%= f.text_field :name %>
   </br>
-  <%= label_tag "Password" %>
-  <%= password_field_tag :password %>
+  <%= f.label "Password" %>
+  <%= f.password_field :password %>
   </br>
-  <%= submit_tag "Sign in" %>
+  <%= f.submit "Sign In" %>
 <% end %>

@@ -6,16 +6,16 @@
   <%= f.password_field :password %>
   </br>
   <%= f.label "Height (in inches)" %>
-  <%= f.number_field :height, min: 24 %>
+  <%= f.number_field :height %>
   </br>
   <%= f.label "Happiness" %>
-  <%= f.number_field :happiness, min: 0, max: 10 %>
+  <%= f.number_field :happiness %>
   </br>
   <%= f.label "Nausea" %>
-  <%= f.number_field :nausea, min: 0, max: 10 %>
+  <%= f.number_field :nausea %>
   </br>
   <%= f.label "Tickets" %>
-  <%= f.number_field :tickets, min: 0 %>
+  <%= f.number_field :tickets %>
   </br>
   <%= f.submit %>
 <% end %>

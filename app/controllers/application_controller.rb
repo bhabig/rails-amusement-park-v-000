@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def logged_in?
-    session[:user_id]
+    !session[:user_id].nil?
   end
 
   def current_user
@@ -14,5 +14,5 @@ class ApplicationController < ActionController::Base
   def password?
     params[:user][:password] || !params[:user][:password].nil?
   end
-  
+
 end
