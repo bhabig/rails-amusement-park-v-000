@@ -259,8 +259,7 @@ describe 'Feature Test: Go on a Ride', :type => :feature do
     click_link('See attractions')
     click_link("Go on #{@rollercoaster.name}")
     click_button("Go on this ride")
-    expect(page).to have_content("You are not tall enough to ride the #{@rollercoaster.name}")
-    expect(page).to have_content("You do not have enough tickets to ride the #{@rollercoaster.name}")
+    expect(page).to have_content("You are not tall enough to ride the #{@rollercoaster.name} and, you do not have enough tickets to ride the #{@rollercoaster.name}")
     expect(page).to have_content("Tickets: 1")
   end
 end

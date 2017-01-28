@@ -22,9 +22,15 @@ class User < ActiveRecord::Base
     self.save
   end
 
+  def update_user_happiness(a)
+    self.happiness += a.happiness_rating
+    self.save
+  end
+
   def attributes_adjustment(a)
     self.update_user_tickets(a)
     self.update_user_mood(a)
+    self.update_user_happiness(a)
   end
 
 
