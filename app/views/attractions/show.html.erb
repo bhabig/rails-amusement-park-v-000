@@ -1,0 +1,8 @@
+<h1><%= @attraction.name %></h1></br>
+
+<h3><%= @user.name %>, click to </h3>
+<%= form_tag '/rides', method: :post do %>
+  <%= hidden_field_tag :user_id, "#{@user.id}" %>
+  <%= hidden_field_tag :attraction_id, "#{@attraction.id}" %>
+  <%= submit_tag "Go on this ride" %>
+<% end %>

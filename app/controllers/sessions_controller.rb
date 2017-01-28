@@ -14,4 +14,13 @@ class SessionsController < ApplicationController
     end
   end
 
+  def destroy
+    if logged_in?
+      session.destroy
+      redirect_to root_path
+    else
+      render :show
+    end
+  end
+
 end

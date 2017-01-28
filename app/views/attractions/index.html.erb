@@ -1,0 +1,7 @@
+<h1>Hi, <%= @user.name %>!</h1></br>
+<h2>Rides:</h2>
+<% @attractions.each do |r| %>
+  <ul>
+    <li><%= r.name %> | <%= link_to "Go on #{r.name}", attraction_path(r) %></li></br>
+  </ul>
+<% end %>

@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @user ||= session[:user_id]
+    @user ||= User.find_by(id: session[:user_id])
   end
 
   def password?

@@ -1,5 +1,10 @@
 <h1><%= @user.name if @user %>'s Credentials:</h1></br>
-<h3>Height: <%= @user.height if !@user.height.nil? %></h3></br>
-<h3>Mood: <%= @user.mood if !@user.nausea.nil? && !@user.happiness.nil? %></h3></br>
-<h3><%= @user.nausea if !@user.nausea.nil? %></h3></br>
-<h3><%= @user.tickets if !@user.tickets.nil? %></h3></br>
+<% if @user.admin %>
+  <h3>ADMIN</h3></br>
+<% end %>
+<h4>Height: <%= @user.height if !@user.height.nil? %></h4></br>
+<h4>Mood: <%= @user.mood if !@user.nausea.nil? && !@user.happiness.nil? %></h4></br>
+<h4>Nausea on a scale of 1-10: <%= @user.nausea if !@user.nausea.nil? %></h4></br>
+<h4>Number of Tickets: <%= @user.tickets if !@user.tickets.nil? %></h4></br>
+<%= link_to "See attractions", attractions_path %></br>
+<%= link_to "Log Out", signout_path, method: :delete %>
