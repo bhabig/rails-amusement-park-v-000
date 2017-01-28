@@ -1,4 +1,5 @@
 <h1><%= @attraction.name %></h1></br>
+<%= link_to "Edit Attraction", edit_attraction_path %>
 
 <h3><%= @user.name %>, click to </h3>
 <%= form_tag '/rides', method: :post do %>

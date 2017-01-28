@@ -1,7 +1,17 @@
 <h1>Hi, <%= @user.name %>!</h1></br>
 <h2>Rides:</h2>
-<% @attractions.each do |r| %>
+<% @attractions.each do |r| %> 
   <ul>
-    <li><%= r.name %> | <%= link_to "Go on #{r.name}", attraction_path(r) %></li></br>
+    <li><%= r.name %> |
+    <% if @user.admin? %>
+      <%= link_to "Show #{r.name}", attraction_path(r) %>
+    <% else %>
+      <%= link_to "Go on #{r.name}", attraction_path(r) %>
+    <% end %>
+  </li></br>
   </ul>
+<% end %>
+
+<% if @user.admin? %>
+  <%= link_to "New Attraction", new_attraction_path %>
 <% end %>

@@ -12,19 +12,21 @@ class User < ActiveRecord::Base
     end
   end
 
-  def update_user_tickets(params)
-    u = User.find_by(id: params[:user_id])
-    a = Attraction.find_by(id: params[:attraction_id])
-    u.tickets -= a.tickets
-    u.save
+  def update_user_tickets(a)
+    self.tickets -= a.tickets
+    self.save
   end
 
-  def update_user_mood(params)
-    u = User.find_by(id: params[:user_id])
-    a = Attraction.find_by(id: params[:attraction_id])
-    u.nausea += a.nausea_rating
-    u.save
+  def update_user_mood(a)
+    self.nausea += a.nausea_rating
+    self.save
   end
+
+  def attributes_adjustment(a)
+    self.update_user_tickets(a)
+    self.update_user_mood(a)
+  end
+
 
   def update_user_attribute(params)
     #can use interpolation to find a way to consolidate above two methods into 1
